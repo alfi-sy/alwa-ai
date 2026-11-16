@@ -1,0 +1,8 @@
+{
+  "appId": "com.alwa.ai",
+  "appName": "ALWA AI",
+  "webDir": "www",
+  "backgroundColor": "#0c1022",
+  "server": { "androidScheme": "https", "cleartext": true },
+  "android": { "allowMixedContent": true }
+}

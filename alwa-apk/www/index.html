@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#10152d">
+  <title>ALWA AI — Asisten Belajar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="ALWA AI beranda">
+        <div class="brand-mark">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Ikon robot ALWA">
+            <path d="M32 7v7" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="32" cy="6" r="4" fill="#9b8cff"/>
+            <rect x="10" y="17" width="44" height="35" rx="13" fill="url(#g1)" stroke="#b9b1ff" stroke-width="2"/>
+            <path d="M10 29H5m54 0h-5" stroke="#b9b1ff" stroke-width="3" stroke-linecap="round"/>
+            <rect x="17" y="25" width="30" height="16" rx="8" fill="#10152d"/>
+            <circle cx="25" cy="33" r="3.2" fill="#69e7ff"/><circle cx="39" cy="33" r="3.2" fill="#69e7ff"/>
+            <path d="M25 46q7 5 14 0" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+            <defs><linearGradient id="g1" x1="10" y1="17" x2="54" y2="52"><stop stop-color="#8d7cff"/><stop offset="1" stop-color="#3f9eff"/></linearGradient></defs>
+          </svg>
+        </div>
+        <span><b>ALWA</b><small>AI STUDY ASSISTANT</small></span>
+      </a>
+      <div class="header-right"><span class="online-dot" id="statusDot"></span><span class="online-text" id="statusText">Memeriksa...</span><button class="icon-btn" id="settingsBtn" title="Pengaturan server" aria-label="Pengaturan server">⚙</button><button class="icon-btn" id="themeBtn" title="Ganti tema" aria-label="Ganti tema">☼</button></div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="sparkle">✦</span> TEMAN BELAJAR PINTAR</div>
+        <h1>Halo! Ada yang bisa<br><span>dibantu hari ini?</span></h1>
+        <p>Tanyakan sesuatu, pahami materi, atau susun jawaban latihan dengan lebih mudah bersama ALWA.</p>
+        <div class="hero-pills"><span>✦ Cepat</span><span>◈ Mudah digunakan</span><span>⌁ Bahasa Indonesia</span></div>
+      </div>
+      <div class="hero-bot" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="bot-large">
+          <div class="antenna"></div><div class="bot-ear left"></div><div class="bot-ear right"></div>
+          <div class="bot-face"><div class="bot-eyes"><i></i><i></i></div><div class="bot-smile"></div></div>
+          <div class="bot-body"><span>✦</span></div>
+        </div>
+        <div class="float-chip chip-one">✧ AI aktif</div><div class="float-chip chip-two">● Online</div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="side-panel">
+        <div class="side-title">MENU</div>
+        <button class="nav-item active" data-view="chat"><span>◉</span> Percakapan baru</button>
+        <button class="nav-item" data-view="tips"><span>✧</span> Tips belajar</button>
+        <div class="side-divider"></div>
+        <div class="side-title">CONTOH PERTANYAAN</div>
+        <button class="suggestion" data-prompt="Jelaskan apa itu fotosintesis dengan bahasa sederhana.">Apa itu fotosintesis?</button>
+        <button class="suggestion" data-prompt="Bantu saya membuat kerangka jawaban esai tentang menjaga lingkungan.">Buat kerangka jawaban esai</button>
+        <button class="suggestion" data-prompt="Buatkan 5 soal latihan matematika tentang persentase beserta pembahasannya.">Latihan matematika</button>
+        <div class="side-note"><span>✦</span><p>ALWA adalah teman belajar. Periksa kembali informasi penting dari sumber tepercaya.</p></div>
+      </aside>
+
+      <section class="chat-panel" id="chatPanel">
+        <div class="chat-heading">
+          <div><h2>Ruang obrolan</h2><p>Mulai percakapan dengan ALWA AI</p></div>
+          <button class="clear-btn" id="clearBtn">↻ <span>Obrolan baru</span></button>
+        </div>
+        <div class="messages" id="messages" aria-live="polite">
+          <div class="welcome-card">
+            <div class="welcome-icon">✦</div>
+            <h3>Senang bertemu denganmu!</h3>
+            <p>Aku ALWA. Aku bisa membantu menjelaskan materi, merangkum pelajaran, dan menyusun latihan esai.</p>
+            <div class="quick-prompts">
+              <button data-prompt="Jelaskan materi dengan bahasa yang mudah dipahami.">📘 Jelaskan materi</button>
+              <button data-prompt="Bantu saya membuat kerangka jawaban esai untuk latihan.">✍️ Latihan esai</button>
+              <button data-prompt="Buatkan rangkuman singkat dari topik fotosintesis.">📝 Buat rangkuman</button>
+            </div>
+          </div>
+        </div>
+        <div class="typing" id="typing"><span></span><span></span><span></span><small>ALWA sedang berpikir...</small></div>
+        <form class="composer" id="chatForm">
+          <textarea id="promptInput" rows="1" placeholder="Tulis pertanyaanmu di sini..." aria-label="Tulis pertanyaan"></textarea>
+          <div class="composer-bottom"><span>Enter untuk mengirim · Shift + Enter untuk baris baru</span><button class="send-btn" type="submit" aria-label="Kirim pesan">➤</button></div>
+        </form>
+        <div class="disclaimer">ALWA dapat membuat kesalahan. Gunakan sebagai pendamping belajar.</div>
+      </section>
+    </section>
+    <footer>© 2026 ALWA AI <span>Dirancang untuk belajar lebih mudah.</span></footer>
+  </main>
+
+  <button class="floating-launcher" id="launcher" aria-label="Buka asisten ALWA">
+    <span class="mini-bot">✦</span><span class="launcher-pulse"></span>
+  </button>
+
+  <dialog id="settingsDlg">
+    <form method="dialog" id="settingsForm">
+      <h3>Pengaturan server AI</h3>
+      <p>Isi alamat server ALWA agar aplikasi memakai AI sungguhan. Kosongkan untuk mode demo.</p>
+      <label for="apiUrl">Alamat server</label>
+      <input id="apiUrl" type="url" inputmode="url" placeholder="https://server-kamu.com atau http://192.168.1.10:3000" autocomplete="off">
+      <div class="dlg-status" id="dlgStatus"></div>
+      <div class="dlg-actions"><button type="button" id="testBtn">Tes koneksi</button><button type="button" id="cancelBtn">Batal</button><button type="submit" id="saveBtn" class="primary">Simpan</button></div>
+    </form>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>

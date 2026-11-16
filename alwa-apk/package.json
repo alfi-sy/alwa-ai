@@ -1,0 +1,22 @@
+{
+  "name": "alwa-ai-study-assistant",
+  "version": "1.1.0",
+  "private": true,
+  "description": "ALWA AI Study Assistant (web + APK Android)",
+  "scripts": {
+    "start": "node server.js",
+    "icons": "capacitor-assets generate --android",
+    "android:add": "cap add android",
+    "android:sync": "cap sync android",
+    "apk": "cap sync android && cd android && ./gradlew assembleDebug"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/core": "^6.2.0",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@capacitor/assets": "^3.0.5",
+    "@capacitor/cli": "^6.2.0"
+  }
+}
